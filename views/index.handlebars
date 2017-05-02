@@ -1,0 +1,16 @@
+<h1>Eat-Da-Burger</h1>
+
+<ul>
+	{{#each burgers}}
+		{{#unless this.devoured}}
+		<li>
+			{{this.burger_name}}
+				
+
+<form class="create-update-form" action="/" method="POST">
+	<div class="form-group">
+		<input type="text" id="burg" name="burgName">
+		<button type="submit">Submit</button>
+		<p>Enter a burger you want to eat.  Click the "Submit" button.</p>
+	</div>
+</form>
