@@ -3,20 +3,23 @@ var connection = requires("./connection.js");
 // Object Relational Mapper
 
 var orm = {
-	selectAll: function() {
-		var queryString = "SELECT * FROM burgers";
+	selectAll: function(tableName, bg) {
+		var queryString = "SELECT * FROM ??";
 		console.log(queryString);
 		connection.query(queryString, function(err, result) {
-			if (err) throw err;
-			console.log(result);
+			if (err) {
+				throw err;
+			}
+			bg(result);
 		});
 	},
-	insertOne: function() {
-		var queryString = "INSERT INTO ?? SET ?";
-		console.log(queryString);
+	insertOne: function(tableName, bg) {
+		var queryString = "INSERT INTO ??";
 		connection.query(queryString, function(err, result) {
-			if (err) throw err;
-			console.log(result);
+			if (err) {
+				throw err;
+			}
+			bg(result);
 		});
 	},
 	updateOne: function() {
@@ -27,3 +30,5 @@ var orm = {
 		});
 	},
 }
+
+module.exports = orm;
