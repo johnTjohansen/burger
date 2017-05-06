@@ -1,4 +1,4 @@
-var connection = requires("./connection.js");
+var connection = require("./connection.js");
 
 // Object Relational Mapper
 
